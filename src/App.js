@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { lazy, Suspense } from "react";
+import "./App.css";
+
+// import HeaderNav from "./StateManageComponent/Header";
+// import PracticeOne from "./StateManageComponent/StateManageFirst";
+
+//                 Instead using Lazy
+
+// Here we are using lazy function instead of directly importing component.
+const HeaderNav = lazy(() => import("./StateManageComponent/Header"));
+const PracticeOne = lazy(() =>
+  import("./StateManageComponent/StateManageFirst")
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Suspense fallback={<div className="loader"></div>}>
+        <Routes>
+          <Route exact path="/" element={<HeaderNav />} />
+          <Route exact path="/StateOne" element={<PracticeOne />} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 
