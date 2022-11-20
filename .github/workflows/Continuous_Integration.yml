@@ -34,7 +34,9 @@ jobs:
       - name: Execute test cases
         run: npm run test
 
-
+      # Run linting
+      - name: Check code lintings
+        run: npm run lint
 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
