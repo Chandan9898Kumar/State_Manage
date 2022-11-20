@@ -29,9 +29,9 @@ const PracticeOne = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (input === "") {
-          reject(setError("Type something!"), setLoad(false));
+          reject(setError("Type something!"), setLoad(false), setData(""));
         } else {
-          resolve(setData(input), setLoad(false));
+          resolve(setData(input), setLoad(false), setError(""));
         }
       }, 1500);
     });
