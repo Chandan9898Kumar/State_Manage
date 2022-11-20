@@ -11,7 +11,6 @@ const styles = {
 const HeaderNav = () => {
   return (
     <div>
-
       <ul className="nav">
         <li>
           <NavLink to="/StateOne" style={styles}>
