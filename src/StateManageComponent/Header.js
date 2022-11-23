@@ -8,6 +8,15 @@ const styles = {
   height: "120px",
   color: "white",
 };
+
+const newStyle={
+  position: "absolute",
+  left: "150px",
+  width: "100px",
+  height: "120px",
+  color: "white",
+
+}
 const HeaderNav = () => {
   return (
     <div>
@@ -18,9 +27,9 @@ const HeaderNav = () => {
           </NavLink>
         </li>
         <br />
-        {/* <li>
-        <NavLink to='/cart' style={{color:'white',wordSpacing:'2px'}}>State Manage Two</NavLink>
-        </li> */}
+        <li>
+        <NavLink to='/SharingStateBetweentwoComp' style={newStyle}>Sharing State</NavLink>
+        </li>
       </ul>
     </div>
   );
