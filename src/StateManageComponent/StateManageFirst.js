@@ -46,6 +46,11 @@ const PracticeOne = () => {
   };
 
   const ChangeBackGround = (e) => {
+    // Here we use stopPropagation()
+
+    // The stopPropagation() method prevents propagation of the same event from being called.
+    // Propagation means bubbling up to parent elements or capturing down to child elements.
+
     e.stopPropagation();
     setActive(true);
   };
@@ -124,7 +129,13 @@ const PracticeOne = () => {
         Click on Image,and then Click on white image on left or right side.
       </label>
 
-      <div style={active ? null : myStyle} onClick={(e) => setActive(false)}>
+      <div
+        style={active ? null : myStyle}
+        onClick={(e) => {
+          // e.stopPropagation();
+          setActive(false);
+        }}
+      >
         <img
           className="picture"
           alt="Rainbow houses in Kampung Pelangi, Indonesia"
