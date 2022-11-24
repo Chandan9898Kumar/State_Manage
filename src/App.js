@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { lazy, Suspense } from "react";
 import "./App.css";
 
+// import MainHeader from './StateManageComponent/PreserveState/MainComponent'
 // import Parent from "./StateManageComponent/SharingStateBetweenTwoComponent/ParentCom";
 // import HeaderNav from "./StateManageComponent/Header";
 // import PracticeOne from "./StateManageComponent/StateManageFirst";
@@ -16,7 +17,9 @@ const PracticeOne = lazy(() =>
 const Parent = lazy(() =>
   import("./StateManageComponent/SharingStateBetweenTwoComponent/ParentCom")
 );
-
+const MainHeader = lazy(() =>
+  import("./StateManageComponent/PreserveState/MainComponent")
+);
 function App() {
   return (
     <BrowserRouter>
@@ -28,6 +31,11 @@ function App() {
             exact
             path="/SharingStateBetweentwoComp"
             element={<Parent />}
+          />
+          <Route
+            exact
+            path="/PreserveState"
+            element={<MainHeader />}
           />
         </Routes>
       </Suspense>

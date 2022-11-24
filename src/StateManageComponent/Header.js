@@ -17,6 +17,14 @@ const newStyle={
   color: "white",
 
 }
+const newStyleTwo={
+  position: "absolute",
+  left: "300px",
+  width: "100px",
+  height: "120px",
+  color: "white",
+
+}
 const HeaderNav = () => {
   return (
     <div>
@@ -29,7 +37,11 @@ const HeaderNav = () => {
         <br />
         <li>
         <NavLink to='/SharingStateBetweentwoComp' style={newStyle}>Sharing State</NavLink>
+        </li><br />
+        <li>
+        <NavLink to='/PreserveState' style={newStyleTwo}>Preserve State</NavLink>
         </li>
+
       </ul>
     </div>
   );
