@@ -42,3 +42,7 @@ This will automatically load the bundle containing the OtherComponent when this 
 
 ### For npm run lint
 `put this in package.json's script - "lint": "eslint . --ext js,jsx,ts,tsx --fix"`
+
+###  Keys
+`Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity:`
+`Example -  <li key={todo.id}>{todo.text}</li>`
