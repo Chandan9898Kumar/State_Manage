@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { lazy, Suspense } from "react";
 import "./App.css";
 
+// import MyReverse from './StateManageComponent/ReSetStateWithKey/MainCompo'
 // import MainHeader from './StateManageComponent/PreserveState/MainComponent'
 // import Parent from "./StateManageComponent/SharingStateBetweenTwoComponent/ParentCom";
 // import HeaderNav from "./StateManageComponent/Header";
@@ -20,6 +21,10 @@ const Parent = lazy(() =>
 const MainHeader = lazy(() =>
   import("./StateManageComponent/PreserveState/MainComponent")
 );
+
+const ReverseState = lazy(() =>
+  import("./StateManageComponent/ReSetStateWithKey/MainCompo")
+);
 function App() {
   return (
     <BrowserRouter>
@@ -32,11 +37,8 @@ function App() {
             path="/SharingStateBetweentwoComp"
             element={<Parent />}
           />
-          <Route
-            exact
-            path="/PreserveState"
-            element={<MainHeader />}
-          />
+          <Route exact path="/PreserveState" element={<MainHeader />} />
+          <Route exact path="/ReStateState" element={<ReverseState />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

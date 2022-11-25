@@ -25,6 +25,15 @@ const newStyleTwo={
   color: "white",
 
 }
+
+const newStyleThree={
+  position: "absolute",
+  left: "450px",
+  width: "150px",
+  height: "120px",
+  color: "white",
+
+}
 const HeaderNav = () => {
   return (
     <div>
@@ -40,6 +49,10 @@ const HeaderNav = () => {
         </li><br />
         <li>
         <NavLink to='/PreserveState' style={newStyleTwo}>Preserve State</NavLink>
+        </li>
+
+        <li>
+        <NavLink to='/ReStateState' style={newStyleThree}>Reset State With Key</NavLink>
         </li>
 
       </ul>
